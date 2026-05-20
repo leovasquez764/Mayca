@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: https:; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>MAYCA</title>
+    <meta
+      name="description"
+      content="Tiendas-Rosmeri muestra productos disponibles y conecta cada consulta con WhatsApp."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+    <div class="ambient ambient-grid" aria-hidden="true"></div>
+    <div class="page-shell">
+      <header class="site-header" id="inicio">
+        <div class="brand-lockup">
+          <span class="brand-badge">TR</span>
+          <div>
+            <p class="brand-kicker">Catalogo online</p>
+            <h1>MAYCA</h1>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <span class="header-pill">Ventas directas por WhatsApp</span>
+          <nav class="site-nav" aria-label="Principal">
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="#contacto">Contacto</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero-section">
+          <div class="hero-copy">
+            <p class="eyebrow">Ofertas y novedades</p>
+            <h2>Elegi tu producto y consultalo directo por WhatsApp</h2>
+            <p>
+              Descubri articulos disponibles, promociones destacadas y un acceso rapido al
+              catalogo completo de Tiendas-Rosmeri.
+            </p>
+            <div class="hero-pills">
+              <span>Catalogo vivo</span>
+              <span>Atencion directa</span>
+              <span>Promos destacadas</span>
+            </div>
+            <a class="hero-cta" href="#productos">Ver productos</a>
+
+            <div class="hero-metrics">
+              <article>
+                <strong>Venta simple</strong>
+                <span>Elegis y consultas en un toque.</span>
+              </article>
+              <article>
+                <strong>Stock visible</strong>
+                <span>Todo ordenado para ver disponibilidad.</span>
+              </article>
+              <article>
+                <strong>Acceso cuidado</strong>
+                <span>Entrada interna con proteccion extra.</span>
+              </article>
+            </div>
+          </div>
+
+          <div class="hero-carousel" aria-label="Promociones destacadas">
+            <div class="hero-glow" aria-hidden="true"></div>
+            <button class="carousel-arrow prev" id="prevSlide" aria-label="Anterior">
+              &#10094;
+            </button>
+            <div class="hero-track" id="heroTrack"></div>
+            <button class="carousel-arrow next" id="nextSlide" aria-label="Siguiente">
+              &#10095;
+            </button>
+            <div class="carousel-dots" id="carouselDots" aria-label="Indicadores"></div>
+          </div>
+        </section>
+
+        <section class="catalog-section" id="productos">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Catalogo</p>
+              <h2>Productos a la venta</h2>
+            </div>
+          </div>
+
+          <div class="catalog-toolbar">
+            <form class="search-panel" id="searchForm">
+              <label class="search-box" for="searchInput">
+                <span class="search-label">Buscador de productos</span>
+                <input
+                  id="searchInput"
+                  type="search"
+                  placeholder="Buscar por nombre, descripcion o precio"
+                  autocomplete="off"
+                />
+              </label>
+              <button type="submit" class="search-button" aria-label="Buscar">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M10.5 3a7.5 7.5 0 1 1 0 15a7.5 7.5 0 0 1 0-15Zm0 2a5.5 5.5 0 1 0 0 11a5.5 5.5 0 0 0 0-11Zm9.2 13.79l1.3 1.3a1 1 0 1 1-1.42 1.41l-1.3-1.29a1 1 0 1 1 1.42-1.42Z"
+                  />
+                </svg>
+              </button>
+            </form>
+
+            <button type="button" class="secure-entry-button" id="openAdminAccess">
+              Acceso interno
+            </button>
+          </div>
+
+          <div class="search-feedback" id="searchFeedback">
+            Escribi para filtrar productos. El acceso interno ahora se abre desde un campo privado y oculto.
+          </div>
+
+          <div class="products-grid" id="productsGrid"></div>
+        </section>
+      </main>
+
+      <footer class="site-footer" id="contacto">
+        <div>
+          <p class="eyebrow">Contacto</p>
+          <h2>MAYCA</h2>
+          <p>Consultas y pedidos directos por WhatsApp.</p>
+        </div>
+
+        <div class="footer-links">
+          <span class="social-card muted" aria-label="TikTok sin enlace por ahora">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M15.36 3c.28 1.53 1.2 2.9 2.52 3.75c.95.6 2.07.93 3.2.95v3.16a9.2 9.2 0 0 1-4.77-1.32v5.44c0 3.52-2.85 6.38-6.37 6.38S3.57 18.5 3.57 14.98s2.85-6.37 6.37-6.37c.33 0 .66.03.97.08v3.22a3.16 3.16 0 0 0-.97-.16a3.23 3.23 0 1 0 3.23 3.23V3h2.19Z"
+              />
+            </svg>
+            <span>TikTok</span>
+          </span>
+
+          <a
+            class="social-card"
+            href="https://wa.me/5491150522096"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="WhatsApp de Tiendas-Rosmeri"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M19.05 4.94A9.94 9.94 0 0 0 12 2a9.98 9.98 0 0 0-8.64 14.98L2 22l5.16-1.34A9.98 9.98 0 1 0 19.05 4.94Zm-7.05 14.1c-1.58 0-3.12-.43-4.46-1.24l-.32-.19l-3.06.8l.82-2.99l-.21-.31a8 8 0 1 1 7.23 3.93Zm4.39-5.98c-.24-.12-1.42-.7-1.64-.79c-.22-.08-.38-.12-.54.12c-.16.24-.62.79-.76.96c-.14.16-.28.18-.52.06c-.24-.12-1-.37-1.9-1.19c-.7-.63-1.18-1.41-1.32-1.65c-.14-.24-.01-.37.11-.49c.11-.11.24-.28.36-.42c.12-.14.16-.24.24-.4c.08-.16.04-.31-.02-.43c-.06-.12-.54-1.3-.74-1.79c-.2-.48-.4-.41-.54-.42h-.46c-.16 0-.43.06-.66.31c-.22.24-.86.84-.86 2.04c0 1.2.88 2.36 1 2.53c.12.16 1.73 2.65 4.19 3.71c.58.25 1.03.4 1.39.51c.58.18 1.11.16 1.53.1c.47-.07 1.42-.58 1.62-1.14c.2-.56.2-1.03.14-1.14c-.06-.1-.22-.16-.46-.28Z"
+              />
+            </svg>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </footer>
+    </div>
+
+    <div class="modal-shell hidden" id="adminModal">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="adminModalTitle">
+        <button type="button" class="modal-close" id="closeAdminAccess" aria-label="Cerrar">
+          &times;
+        </button>
+        <p class="eyebrow">Acceso interno</p>
+        <h2 id="adminModalTitle">Entrar al panel admin</h2>
+        <p class="modal-copy">
+          La clave privada se escribe en un campo oculto, se valida con hash y tiene bloqueo
+          temporal por intentos fallidos.
+        </p>
+
+        <form class="admin-access-form" id="adminAccessForm">
+          <label class="search-box" for="adminPasswordInput">
+            <span class="search-label">Clave privada</span>
+            <input
+              id="adminPasswordInput"
+              type="password"
+              inputmode="numeric"
+              autocomplete="off"
+              placeholder="Ingresar clave"
+              required
+            />
+          </label>
+          <button type="submit" class="primary-action modal-action">Entrar</button>
+        </form>
+
+        <div class="status-banner" id="adminModalStatus">
+          La sesion interna dura 20 minutos y no deja la clave visible al escribirla.
+        </div>
+      </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

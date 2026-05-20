@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: https:; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Admin | MAYCA</title>
+    <meta
+      name="description"
+      content="Panel admin de Tiendas-Rosmeri para agregar, ocultar y modificar productos."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="admin-page">
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+    <div class="ambient ambient-grid" aria-hidden="true"></div>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="brand-lockup">
+          <span class="brand-badge">TR</span>
+          <div>
+            <p class="brand-kicker">Panel interno</p>
+            <h1>Admin Tiendas-Rosmeri</h1>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <span class="header-pill">Sesion interna temporal</span>
+          <nav class="site-nav" aria-label="Principal">
+            <a href="index.html" class="utility-link">Volver a la tienda</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="admin-section admin-section-page">
+          <div class="section-heading admin-heading">
+            <div>
+              <p class="eyebrow">Gestion</p>
+              <h2>Agregar, ocultar y modificar productos</h2>
+            </div>
+            <p class="heading-support">
+              Carga productos nuevos con imagen subida desde tu equipo en formato PNG o JPG.
+            </p>
+          </div>
+
+          <div class="status-banner" id="statusBanner">
+            Usa este panel para mantener tu catalogo actualizado con acceso temporal protegido.
+          </div>
+
+          <div class="admin-layout">
+            <form class="admin-form" id="adminForm">
+              <input type="hidden" id="productId" />
+
+              <label>
+                Nombre del producto
+                <input id="productName" type="text" maxlength="60" required />
+              </label>
+
+              <label>
+                Descripcion
+                <textarea id="productDescription" rows="4" maxlength="220" required></textarea>
+              </label>
+
+              <label>
+                Precio
+                <input id="productPrice" type="text" maxlength="30" placeholder="$ 0.000" required />
+              </label>
+
+              <label>
+                Stock
+                <input id="productStock" type="number" min="0" step="1" required />
+              </label>
+
+              <label class="file-field">
+                Imagen del producto
+                <input
+                  id="productImageFile"
+                  type="file"
+                  accept=".png,.jpg,.jpeg,image/png,image/jpeg"
+                />
+                <span class="field-note">Solo se aceptan archivos PNG o JPG.</span>
+              </label>
+
+              <div class="preview-frame hidden" id="imagePreviewWrap">
+                <img id="imagePreview" alt="Vista previa del producto" />
+                <span id="imagePreviewText"></span>
+              </div>
+
+              <label class="checkbox-row">
+                <input id="productDiscount" type="checkbox" />
+                <span>Producto en descuento</span>
+              </label>
+
+              <div class="form-actions">
+                <button type="submit" class="primary-action" id="saveProductButton">
+                  Agregar producto
+                </button>
+                <button type="button" class="ghost-action hidden" id="cancelEditButton">
+                  Cancelar edicion
+                </button>
+              </div>
+            </form>
+
+            <div class="admin-list" id="adminList"></div>
+          </div>
+
+          <div class="sales-board">
+            <section class="sales-card">
+              <div class="sales-header">
+                <div>
+                  <p class="eyebrow">Ventas</p>
+                  <h3>Registrar venta</h3>
+                </div>
+                <p class="heading-support">
+                  Cuando concretes una venta, guardala aca para que quede en la base de datos.
+                </p>
+              </div>
+
+              <form class="sale-form" id="saleForm">
+                <label>
+                  Producto vendido
+                  <select id="saleProductId" required></select>
+                </label>
+
+                <label>
+                  Cantidad
+                  <input id="saleQuantity" type="number" min="1" step="1" value="1" required />
+                </label>
+
+                <label>
+                  Nombre del cliente
+                  <input id="saleCustomerName" type="text" maxlength="80" placeholder="Opcional" />
+                </label>
+
+                <label>
+                  Contacto del cliente
+                  <input
+                    id="saleCustomerContact"
+                    type="text"
+                    maxlength="80"
+                    placeholder="Telefono, WhatsApp o nota breve"
+                  />
+                </label>
+
+                <label>
+                  Notas
+                  <textarea id="saleNotes" rows="3" maxlength="220" placeholder="Opcional"></textarea>
+                </label>
+
+                <div class="sale-preview" id="salePreview">
+                  Elegi un producto para ver el total estimado.
+                </div>
+
+                <button type="submit" class="primary-action">Guardar venta</button>
+              </form>
+            </section>
+
+            <section class="sales-card">
+              <div class="sales-header">
+                <div>
+                  <p class="eyebrow">Historial</p>
+                  <h3>Ventas guardadas</h3>
+                </div>
+                <p class="heading-support">
+                  Este listado te ayuda a revisar rapidamente lo que ya se vendio.
+                </p>
+              </div>
+
+              <div class="sales-list" id="salesList"></div>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>
